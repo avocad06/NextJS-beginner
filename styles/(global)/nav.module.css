@@ -8,7 +8,7 @@
     left: 50%;
     z-index: 10;
     transform: translateX(-50%);
-
+    padding: 0 20px;
   }
   
   .nav ul {
@@ -22,8 +22,12 @@
     transform: none;
     transition: all 0.1s ease-in-out;
 
+    color: lightgrey;
+    opacity: .7;
+
     &.active {
       color: white;
+      opacity: 1;
     }
   }
 

@@ -14,7 +14,7 @@ export default function Navigation() {
                     <Link href="/">Home{path === "/" ? "💕" : ""}</Link>
                 </li>
                 <li className={path === "/about-us" ? styles.active : ""}>
-                    <Link href="/about-us">About Us{path === "/about-us" ? "💕" : ""}</Link>
+                    <Link href="/about-us">About Project{path === "/about-us" ? "💕" : ""}</Link>
                 </li>
             </ul>
         </nav>
