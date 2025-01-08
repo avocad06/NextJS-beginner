@@ -1,6 +1,7 @@
 import { BASE_API_URL } from "../app/constatns";
 import { IMovieDetailVideo } from "../app/type";
 import { validateId } from "../app/utils";
+import styles from '../styles/(movie)/videos.module.css';
 
 
 /**
@@ -8,9 +9,9 @@ import { validateId } from "../app/utils";
  * @param id
  * @returns 
  */
-async function getMovieVideos(id: string): Promise<IMovieDetailVideo> {
+async function getMovieVideos(id: string): Promise<IMovieDetailVideo[]> {
     
-    let resultData = {}; // 반환 값 초기화
+    let resultData = []; // 반환 값 초기화
 
     const requestURL = `${BASE_API_URL}/${id}/videos`
 
@@ -46,5 +47,15 @@ export default async function MovieVideo({id} : {id: string}) {
 
 
     const videoData = await getMovieVideos(id);
-    return (<h6>{JSON.stringify(videoData)}</h6>);
+    return (
+        <div className={styles.container}>
+            {videoData?.map((video) => <iframe 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                key={video.id} 
+                title={video.name}
+                src={`https://youtube.com/embed/${video.key}`}
+             />)}
+        </div>
+    );
 }

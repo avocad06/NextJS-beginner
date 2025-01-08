@@ -1,7 +1,7 @@
 import { BASE_API_URL } from "../app/constatns";
 import { IMovieDetail } from "../app/type";
 import { validateId } from "../app/utils";
-import '../styles/(movie)/detail.module.css';
+import styles from '../styles/(movie)/detail.module.css';
 
 
 /**
@@ -47,5 +47,19 @@ export default async function MovieDetail({id} : {id: string}) {
 
 
     const infoData = await getMovieDetail(id);
-    return (<h1>{infoData?.title}</h1>);
+    return (
+        <div className={styles.container}>
+            <img 
+                alt={infoData.title} 
+                className={styles.poster} 
+                src={infoData.poster_path}
+            />
+            <div className={styles.info}>
+                <h1 className={styles.title}>{infoData.title}</h1>
+                <h3 className={styles.vote_average}>⭐{infoData.vote_average?.toFixed(1)}</h3>
+                <p>{infoData.overview}</p>
+                <a href={infoData.homepage} target={"blank"}>Homepage &rarr;</a>
+            </div>
+        </div>
+    );
 }

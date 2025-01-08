@@ -1,7 +1,6 @@
 import { BASE_API_URL } from "../constatns";
 import Movie from "../../components/movie_item";
 import styles from "../../styles/(home)/homepage.module.css";
-import { BASE_API_URL } from "../constatns";
 
 
 
@@ -47,15 +46,17 @@ async function getPopularMovies() {
 export default async function HomePage() {
     const movieData = await getPopularMovies();
     return (
-        <div className={styles.container}>
-            {movieData?.map((movie) => 
-                <Movie 
+        <div className="homepage">
+            <div className={styles.container}>
+                {movieData?.map((movie) => 
+                    <Movie 
                     key={movie.id} 
                     id={movie.id} 
                     title={movie.title} 
                     poster_path={movie.poster_path} 
-                />
-            )}
+                    />
+                )}
+            </div>
         </div>
     )
 }

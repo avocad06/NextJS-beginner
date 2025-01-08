@@ -10,10 +10,10 @@ export default function Navigation() {
     return (
         <nav className={styles.nav}>
             <ul>
-                <li>
+                <li className={path === "/" ? styles.active : ""}>
                     <Link href="/">Home{path === "/" ? "💕" : ""}</Link>
                 </li>
-                <li>
+                <li className={path === "/about-us" ? styles.active : ""}>
                     <Link href="/about-us">About Us{path === "/about-us" ? "💕" : ""}</Link>
                 </li>
             </ul>

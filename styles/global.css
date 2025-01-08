@@ -29,3 +29,7 @@ body {
     background-color: lightslategray;
 }
 
+/* components */
+.homepage, .movie_detail_page {
+    padding-top: 80px;
+}

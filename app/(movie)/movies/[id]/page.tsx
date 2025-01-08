@@ -47,9 +47,9 @@ async function getMovieDetail(id: string): Promise<IMovieDetail> {
  * @param id
  * @returns 
  */
-async function getMovieVideos(id: string): Promise<IMovieDetailVideo> {
+async function getMovieVideos(id: string): Promise<IMovieDetailVideo[]> {
     
-    let resultData = {}; // 반환 값 초기화
+    let resultData = []; // 반환 값 초기화
 
     const requestURL = `${BASE_API_URL}/${id}/videos`
 
@@ -103,7 +103,7 @@ export default async function Page({ params }: { params: Promise<{ id: string }>
     
 
     return (
-        <div>
+        <div className="movie_detail_page">
             <Suspense fallback={<MovieLoading name="Detail"/>}>
                 <MovieDetail id={id} />
             </Suspense>
