@@ -3,15 +3,8 @@ import MovieDetail from "../../../../components/movie-detail";
 import MovieVideo from "../../../../components/movie-video";
 import MovieLoading from "../../../../components/movie-fallback";
 import { BASE_API_URL } from "../../../constatns";
-
-/** types */
-export interface IMovieDetail {
-    title?: string;
-}
-
-export interface IMovieDetailVideo {
-    // title?: string;
-}
+import { validateId } from "../../../utils";
+import { IMovieDetail, IMovieDetailVideo } from "../../../type";
 
 /**
  * moves/id
@@ -25,7 +18,7 @@ export interface IMovieDetailVideo {
  * @param id
  * @returns 
  */
-async function getMovieDetail(id: string): Promise<MovieDetail> {
+async function getMovieDetail(id: string): Promise<IMovieDetail> {
     
     let resultData = {}; // 반환 값 초기화
 
@@ -54,7 +47,7 @@ async function getMovieDetail(id: string): Promise<MovieDetail> {
  * @param id
  * @returns 
  */
-async function getMovieVideos(id: string): Promise<MovieDetailVideo> {
+async function getMovieVideos(id: string): Promise<IMovieDetailVideo> {
     
     let resultData = {}; // 반환 값 초기화
 
@@ -75,17 +68,6 @@ async function getMovieVideos(id: string): Promise<MovieDetailVideo> {
 
     // 결과를 return 한다
     return resultData;   
-}
-
-/**
- * id 값의 유효성을 검사하는 함수
- * @param id 
- */
-
-export function validateId(id: unknown): void {
-    if (typeof id !== 'string' || isNaN(Number(id))) {
-        throw new Error('invalid id');
-    }
 }
 
 

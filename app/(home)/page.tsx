@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "../../styles/(home)/homepage.module.css";
+import { BASE_API_URL } from "../constatns";
 
 
 
