@@ -1,0 +1,31 @@
+/* global style */
+
+/* css resets */
+body {
+    margin: 0;
+    padding: 0;
+    
+}
+
+ul {
+    padding: unset;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: unset;
+    text-decoration: unset;
+
+    &:hover {
+        color: white;
+    }
+}
+
+/* body */
+body {
+    background-color: lightslategray;
+}
+

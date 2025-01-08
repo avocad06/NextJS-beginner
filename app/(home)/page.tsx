@@ -1,4 +1,7 @@
 import Link from "next/link";
+import styles from "../../styles/(home)/homepage.module.css";
+
+
 
 export const metadata = {
     title : 'Home',
@@ -47,7 +50,7 @@ export default async function HomePage() {
     return (
         <div>
             {movieData?.map((movie) => 
-            <li key={movie.id}>
+            <li key={movie.id} className={styles.text}>
                 <Link href={`/movies/${movie.id}`}>{movie.title}</Link>
             </li>
         )}

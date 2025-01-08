@@ -1,5 +1,6 @@
 import { BASE_API_URL } from "../app/(home)/page";
 import { IMovieDetail, validateId } from "../app/(movie)/movies/[id]/page";
+import '../styles/(movie)/detail.module.css';
 
 
 /**
