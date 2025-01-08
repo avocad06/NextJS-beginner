@@ -7,9 +7,6 @@ export const metadata = {
     title : 'Home',
 }
 
-// url을 확인한다
-export const BASE_API_URL = 'https://nomad-movies.nomadcoders.workers.dev/movies';
-
 /**
  * data를 fecthing 하는 함수
  * @description 이 함수는 컴포넌트 안에 있을 필요 없습니다

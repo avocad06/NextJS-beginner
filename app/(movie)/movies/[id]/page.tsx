@@ -1,8 +1,8 @@
 import { Suspense } from "react";
-import { BASE_API_URL } from "../../../(home)/page"
 import MovieDetail from "../../../../components/movie-detail";
 import MovieVideo from "../../../../components/movie-video";
 import MovieLoading from "../../../../components/movie-fallback";
+import { BASE_API_URL } from "../../../constatns";
 
 /** types */
 export interface IMovieDetail {

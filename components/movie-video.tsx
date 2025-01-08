@@ -1,5 +1,5 @@
-import { BASE_API_URL } from "../app/(home)/page";
 import { IMovieDetailVideo, validateId } from "../app/(movie)/movies/[id]/page";
+import { BASE_API_URL } from "../app/constatns";
 
 
 /**
